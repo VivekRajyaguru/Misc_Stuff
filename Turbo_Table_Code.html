@@ -1,0 +1,33 @@
+<p-table #dt [columns]="columns" [lazy]="true" [value]="data" [paginator]="true" 
+[rows]="20" [first]="first" [globalFilterFields]="['categoryName']"  [loading]="loading" (onLazyLoad)= "onLazyLoad($event)">
+  <ng-template pTemplate="caption">
+      List of Users
+      <div style="text-align: right">        
+          <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+          <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'equals')" style="width:auto">
+      </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+      <tr>
+          <th *ngFor="let col of columns" [pSortableColumn]="col.value">
+              {{col.label}}
+              <p-sortIcon [field]="col.value"></p-sortIcon>
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData>
+      <tr>
+          <td (click)="viewUserDetails(rowData.id)">{{rowData.categoryName}}</td>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+      Total Category  {{data?.length}}
+  </ng-template>
+  <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
+          <td [attr.colspan]="columns.length">
+              No records found
+          </td>
+      </tr>
+  </ng-template>
+</p-table>
