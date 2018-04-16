@@ -31,3 +31,30 @@
       </tr>
   </ng-template>
 </p-table>
+
+
+ this.datatableParam = {
+      'first': event.first ? event.first : 0,
+      'rows': event.rows ? event.rows : 0 ,
+      'sortField': event.sortField ? event.sortField : 'id',
+      'sortOrder': event.sortOrder ? event.sortOrder : 1,
+      'searchValue': event.globalFilter ?  event.globalFilter : ''
+    };
+
+
+export class DataTableParam {
+    first: Number;
+    rows: Number;
+    sortField: string;
+    sortOrder: Number;
+    searchValue: string;
+}
+
+
+
+export class DataTableEntity<T> {
+    totalRecords: Number;
+    first: Number;
+    rows: Number;
+    data: Array<T>;
+}
