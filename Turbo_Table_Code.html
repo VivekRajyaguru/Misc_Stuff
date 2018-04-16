@@ -58,3 +58,16 @@ export class DataTableEntity<T> {
     rows: Number;
     data: Array<T>;
 }
+
+  
+  Direction direction =  datatableParam.getSortOrder() == 1 ? Direction.ASC : Direction.DESC;
+		Pageable pageable =  new  PageRequest(datatableParam.getFirst(), datatableParam.getRows(), direction, datatableParam.getSortField());
+		Page<Category> categoryList = categoryRepository.findByIsDefaultAndIsActiveAndCategoryNameLike("1", "1",datatableParam.getSearchValue(), pageable);
+		
+		DataTableEntity<CategoryVO> dataTable = new DataTableEntity<>();
+		dataTable.setFirst(pageable.getPageNumber());
+		dataTable.setRows(pageable.getPageSize());
+		dataTable.setTotalRecords((int) categoryList.getTotalElements());
+		dataTable.setData(categoryConvertService.convertCategoryDomainListToVOList(categoryList.getContent()));
+		
+		return dataTable;
