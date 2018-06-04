@@ -1,0 +1,228 @@
+/* You can add global styles to this file, and also import other style files */
+
+.onlineCls {
+  font-size: 30px;
+  color: green;
+}
+
+.offlineCls {
+  font-size: 30px;
+  color: red;
+}
+
+.blue-bg {
+  background: #086ca5;
+  padding: 15px;
+  width: 100%;
+  height: calc(100vh - 140px);
+}
+
+.plank-header {
+  color: #fff;
+  text-align: center;
+  line-height: normal;
+  font-size: 39px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: normal;
+  opacity: 0.85;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.plank-header,
+.show_6screen_main .plank-header,
+.show_8screen_main {
+  font-size: 2vw;
+  min-height: 4.5vh;
+}
+
+.footer-time {
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  color: #435870;
+  font-size: 2vw;
+  margin: 10px 0 10px;
+}
+
+.plank-img {
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+.white-bg {
+  background: #fff;
+  width: 100%;
+  padding: 15px;
+}
+
+.footer-text {
+  color: #3b9cd2;
+  font-size: 3vw;
+  font-weight: bold;
+  margin: 10px 0;
+  line-height: normal;
+  white-space: nowrap;
+  margin-left: -10px;
+}
+
+.color-grey-text {
+  text-align: center;
+  padding: 50px;
+  color: #777;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  display: block
+}
+
+.color-white-text {
+  text-align: center;
+  padding: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: 500;
+  width: 100%;
+  display: block
+}
+
+.footer-text span {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  font-size: 3vw;
+  font-weight: normal;
+  line-height: normal;
+}
+
+.footer-logo img {
+  padding-top: 20px;
+}
+
+.version-text {
+  font-weight: bold;
+  color: #444;
+  text-align: right;
+  font-size: 10px;
+  margin-bottom: 0px;
+}
+
+.monitor-text {
+  color: #444;
+  text-align: left;
+  font-size: 15px;
+}
+
+.Show_2Screen {
+  padding-top: 5%;
+}
+
+.single-img {
+  /*height: 100vh;*/
+  height: calc(100vh - 160px);
+  width: 100vw;
+}
+
+.show_4screen .container {
+  max-width: 86%;
+}
+
+/*.blue-bg.show_1screen .plank-img{
+  height: calc((100vh - 210px) / 2.8);
+  object-fit: fill;
+  width: 100%;
+
+}*/
+.blue-bg.show_4screen .plank-img,
+.blue-bg.show_6screen .plank-img,
+.blue-bg.show_8screen .plank-img {
+  height: calc((100vh - 140px) / 2.8);
+  -o-object-fit: fill;
+  object-fit: fill;
+  width: 100%;
+}
+
+.blankminheight {
+  height: calc(100vh - 140px);
+  -o-object-fit: fill;
+  object-fit: fill;
+  background: #086ca5;
+}
+
+.blue-bg.show_4screen .container,
+.blue-bg.show_6screen,
+.blue-bg.show_8screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+/* TV Landscap Mode CSS Starts*/
+@media (min-width:1100px){
+  .plank-img {
+   background: #e1e1e1;
+  }
+}
+/* TV Portrait Mode CSS Starts*/
+@media (max-width:1100px) {
+  .blue-bg.Show_2Screen .col-md-6 {
+    width: 100%;
+    max-width: 100%;
+  }
+  .blue-bg.Show_2Screen {
+    height: calc(100vh - 140px);
+  }
+  .blue-bg.show_4screen .plank-img,
+  .blue-bg.show_6screen .plank-img,
+  .blue-bg.show_8screen .plank-img {
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
+  }
+  .single-img {
+    -o-object-fit: fill;
+    object-fit: fill;
+  }
+  .blue-bg.show_4screen .col-md-6,
+  .blue-bg.show_6screen .col-md-4,
+  .blue-bg.show_8screen .col-md-3 {
+    width: 50%;
+    max-width: 50%;
+    margin-bottom: 50px;
+  }
+  .plank-header,
+  .show_6screen_main .plank-header,
+  .show_8screen_main {
+    font-size: 2vw;
+    min-height: 2vh;
+  }
+}
+
+@media (max-width:1920px) {
+  .blue-bg.Show_2Screen {
+    height: calc(100vh - 140px);
+  }
+}
+
+@media (min-height:1920px) {
+  .blue-bg {
+    height: calc(100vh - 210px);
+  }
+  .blue-bg.show_4screen .col-md-6 {
+    min-height: 680px;
+  }
+  .blue-bg.show_4screen .col-md-6 .plank-img {
+    height: 500px;
+  }
+  .blue-bg.show_6screen .col-md-4 {
+    min-height: 480px;
+  }
+  .blue-bg.show_8screen {
+    height: auto;
+  }
+}
