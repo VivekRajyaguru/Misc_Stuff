@@ -7,14 +7,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() onNavigation = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelect(flag) {
-    this.onNavigation.emit(flag);
-  }
+  
 
 }
