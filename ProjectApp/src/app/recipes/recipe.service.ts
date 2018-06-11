@@ -1,9 +1,10 @@
 import { Recipe } from "./receipe.model";
 import { Injectable } from "@angular/core";
 import { Ingredients } from "../shared/ingredients.models";
-import { ShoppingListService } from "../shopping-list/shopping-list.service";
 import { Subject } from "rxjs/Subject";
-
+import { Store } from "@ngrx/store";
+import * as ShoppingListActions from "../shopping-list/store/shopping-list.actions";
+import * as AppStore from "../store/app.reducers";
 
 @Injectable()
 export class RecipeService {
@@ -14,7 +15,7 @@ export class RecipeService {
         new Recipe('Test ', 'Test Recipes', 'https://kfoods.com/photos/images_photos/photos/87087539_20149292378.jpg', [new Ingredients('Tomatoes', 10), new Ingredients('Kiwi', 20)])
     ];
 
-    constructor(private shoppingListService: ShoppingListService) {
+    constructor(private store: Store<AppStore.AppState>) {
 
     }
 
@@ -23,7 +24,7 @@ export class RecipeService {
     }
 
     addItemToCart(ingredients: Ingredients[]) {
-        this.shoppingListService.addIngredient(ingredients);
+        this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients));
 
     }
 
